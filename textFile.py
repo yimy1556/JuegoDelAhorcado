@@ -1,6 +1,8 @@
 import random
 
 class TextFile(object):
+    FORMAT = ".txt"
+
     def __init__(self):
         self.__setFileNema__()
         self.__file = open(self.__fileNema ,'r')
@@ -11,7 +13,7 @@ class TextFile(object):
     
     
     def __setFileNema__(self):
-        self.__fileNema = str(input("Enter File Nema : ").lower())
+        self.__fileNema = str(input("Enter File Nema : ").lower()) + self.FORMAT 
 
 
     
