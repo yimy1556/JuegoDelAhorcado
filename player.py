@@ -3,25 +3,23 @@ from ahorcado import *
 class Player(object):
     def __init__(self ,word ,playerNumber):
         self.playerNumber = playerNumber
-        self.word = word.lower()
+        self.word = word
         self.lettersEnteredCorrect = set()
         self.endOfGame  = False
+        self.winner  = False
         self.lostLives = 0
         self.__getNema__()
 
     def getOpponentText(self ,text):
         self.opponentText = text
 
-
-    def getLettersEnteredCorrect(self):
-        lyrics = str(input("Enter The Letter That Belongs To The Word")).lower()
-        if lyrics in self.word:
-            self.lettersEnteredCorrect.add(lyrics)
-        return lyrics
+    
+    def getLettersEnteredCorrect(self ,lyrics):
+        self.lettersEnteredCorrect.add(lyrics)
 
     def repeatedLetter(self, lyrics):
-        if lyrics in self.lettersEnteredCorrect:
-            print("Letter Entered Already Entered You Lose Your Turn")
+        if lyrics in self.lettersEnteredCorrect and len(self.lettersEnteredCorrect) != 1:
+            print("!!! Letter Entered Already Entered You Lose Your Turn ¡¡¡")
 
     def printText(self):
         print("la palabra era {}".format(self.playerText))

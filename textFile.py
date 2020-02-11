@@ -7,7 +7,7 @@ class TextFile(object):
         self.__setFileNema__()
         self.__file = open(self.__fileNema ,'r')
 
-
+    
     #def __setOpeningMode__(self):
     #    self.__openingMode = str(input(self.OPENINGGUIDE)).lower()
     
@@ -27,6 +27,8 @@ class TextFile(object):
     
     
     def wordRandom(self):
-        words = self.__file.readlines() 
-        return random.choice(words)            
+        text = self.__file.readlines()
+        word = random.choice(text)
+
+        return word[:len(word)-1].lower()            
 
