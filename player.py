@@ -29,8 +29,6 @@ class Player(object):
     def __getNema__(self):
         self.playerName = str(input('Enter Player Name : '))
 
-
-
     def GameOver(self):
         self.endOfGame = True
 
